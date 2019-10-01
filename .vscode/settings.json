@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "database": ".\\database.js",
+            "dialect": "SQLite",
+            "isActive": false,
+            "isConnected": false,
+            "name": "dbCon"
+        }
+    ],
+    "sqltools.useNodeRuntime": true,
+    "git.ignoreLimitWarning": true
+}
