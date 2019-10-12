@@ -36,12 +36,10 @@ db.run("insert into classes (classid, classname, room, datesession) values ('CSD
   }
   console.log('class inserted')
 })
-
 db.run("insert into enrollment (enrollmentid, student_id, class_id) values (1233,741277,'CSD3314_4'),(1234,744678,'CSD3314_4'),(1235,743540,'CSD3314_4');", function (err) {
   if (err) {
     return console.log(err.message)
   }
   console.log('enrolled')
 })
-
 db.close()

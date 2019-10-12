@@ -6,10 +6,12 @@ const db = new sqlite3.Database('./college.db', (err) => {
   }
   console.log('Connected to the database.')
 })
-db.each("Select enrollment.studentid,studentname,programgroup, classname, room, datesession from students,classes,enrollment where enrollment.classid='CSD3314_4'", (err, row) => {
+
+db.each("Select enrollment.student_id,studentname,programgroup, classname, room, datesession from students,classes,enrollment where enrollment.class_id='CSD3314_4'", (err, row) => {
   if (err) {
     throw err
   }
-  console.log(row.studentid, row.studentname, row.programgroup, row.classname, row.room, row.datesession)
+  console.log(row.student_id, row.studentname, row.programgroup, row.classname, row.room, row.datesession)
 })
+
 db.close()
