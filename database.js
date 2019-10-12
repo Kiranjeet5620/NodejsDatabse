@@ -43,12 +43,12 @@ db.run("insert into enrollment (enrollmentid, studentid, classid) values (1233,7
   }
   console.log('enrolled')
 })
-db.serialize(() => {
-  db.each("Select enrollment.studentid,studentname,programgroup, classname, room, datesession from students,classes,enrollment where enrollment.classid='CSD3314_4'", (err, row) => {
-    if (err) {
-      throw err
-    }
-    console.log(row.studentid, row.studentname, row.programgroup, row.classname, row.room, row.datesession)
-  })
+
+db.each("Select enrollment.studentid,studentname,programgroup, classname, room, datesession from students,classes,enrollment where enrollment.classid='CSD3314_4'", (err, row) => {
+  if (err) {
+    throw err
+  }
+  console.log(row.studentid, row.studentname, row.programgroup, row.classname, row.room, row.datesession)
 })
+
 db.close()
