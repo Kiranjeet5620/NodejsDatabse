@@ -18,7 +18,7 @@ db.run('CREATE TABLE classes (classid VARCHAR(20) PRIMARY KEY,classname VARCHAR(
   }
   console.log('classes Table created')
 })
-db.run('CREATE TABLE enrollment (enrollmentid VARCHAR(20) PRIMARY KEY,student_id VARCHAR(20) NOT NULL,class_id VARCHAR(20) NOT NULL,FOREIGN KEY (student_id) REFERENCES students (studentid) ,FOREIGN KEY (class_id) REFERENCES classes (classid) );', function (err) {
+db.run('CREATE TABLE enrollment (enrollmentid VARCHAR(20) PRIMARY KEY,studentid VARCHAR(20) NOT NULL,classid VARCHAR(20) NOT NULL,FOREIGN KEY (classid) REFERENCES classes (classid) ,FOREIGN KEY (studentid) REFERENCES students (studentid) );', function (err) {
   if (err) {
     return console.log(err.message)
   }
@@ -36,7 +36,7 @@ db.run("insert into classes (classid, classname, room, datesession) values ('CSD
   }
   console.log('class inserted')
 })
-db.run("insert into enrollment (enrollmentid, student_id, class_id) values (1233,741277,'CSD3314_4'),(1234,744678,'CSD3314_4'),(1235,743540,'CSD3314_4');", function (err) {
+db.run("insert into enrollment (enrollmentid, studentid, classid) values (1233,741277,'CSD3314_4'),(1234,744678,'CSD3314_4'),(1235,743540,'CSD3314_4');", function (err) {
   if (err) {
     return console.log(err.message)
   }
