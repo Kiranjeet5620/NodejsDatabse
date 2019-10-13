@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": true,
+            "database": ".\\user.db",
+            "dialect": "SQLite",
+            "name": "DBCON"
+        }
+    ]
+}
